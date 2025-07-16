@@ -1,4 +1,4 @@
-import { signup } from '@/app/auth/actions';
+import { signUp } from '@/app/auth/actions';
 
 export default function SignupPage() {
   return (
@@ -9,7 +9,7 @@ export default function SignupPage() {
         <input id="email" name="email" type="email" required />
         <label htmlFor="password">비밀번호</label>
         <input id="password" name="password" type="password" required />
-        <button formAction={signup}>회원가입</button>
+        <button formAction={signUp}>회원가입</button>
       </form>
     </div>
   );
