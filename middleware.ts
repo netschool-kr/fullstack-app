@@ -40,8 +40,8 @@ export async function middleware(request: NextRequest) {
   }
 
   // 3. 인증 페이지 접근 제어
-  // 로그인한 사용자가 인증 관련 페이지(예: /login, /signup)에 접근 시 대시보드로 리디렉션
-  if (user && (pathname.startsWith('/login') || pathname.startsWith('/signup'))) {
+  // 로그인한 사용자가 인증 관련 페이지(예: /login, /signUp)에 접근 시 대시보드로 리디렉션
+  if (user && (pathname.startsWith('/login') || pathname.startsWith('/signUp'))) {
     return NextResponse.redirect(new URL('/dashboard', request.url));
   }
 
@@ -49,5 +49,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/login', '/signup'],
+  matcher: ['/dashboard/:path*', '/login', '/signUp'],
 };
