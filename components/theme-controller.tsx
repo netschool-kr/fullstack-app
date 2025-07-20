@@ -18,7 +18,7 @@ export default function ThemeController() {
     } else {
       setTheme(prefersDark ? 'dark' : 'light');
     }
-  }, []); // 빈 배열: 한 번만 실행
+  }, [setTheme]); // 빈 배열: 한 번만 실행
 
   useEffect(() => {
     // theme 변경 시 클래스 업데이트 및 localStorage 저장
