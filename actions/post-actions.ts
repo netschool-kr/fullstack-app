@@ -1,4 +1,4 @@
-// app/actions/post-actions.ts (서버 액션)
+// actions/post-actions.ts (서버 액션)
 'use server';
 
 import { createClient } from '@/utils/supabase/server';
