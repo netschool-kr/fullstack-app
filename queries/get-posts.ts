@@ -1,5 +1,5 @@
 // queries/get-posts.ts
-
+'use server'
 import { createClient } from '@/utils/supabase/client';
 
 // 게시물 데이터의 타입을 정의합니다.

@@ -1,3 +1,6 @@
+// utils/supabase/client.ts
+'use client';  // 클라이언트 전용 파일로 명시
+
 import { createBrowserClient } from '@supabase/ssr';
 
 /**

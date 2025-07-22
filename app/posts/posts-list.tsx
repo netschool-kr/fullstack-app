@@ -2,7 +2,7 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { getPosts } from '@/app/queries/get-posts';
+import { getPosts } from '@/queries/get-posts';
 
 export default function PostsList() {
   // 3. useQuery는 서버에서 프리페칭된 데이터를 즉시 사용

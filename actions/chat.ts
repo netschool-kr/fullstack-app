@@ -1,5 +1,5 @@
 // actions/chat.ts
-
+'use server'
 import { createClient } from '@/utils/supabase/server';
 
 async function getMessagesWithProfiles(roomId: number) {

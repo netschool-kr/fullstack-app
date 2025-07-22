@@ -1,4 +1,5 @@
 // queries/use-posts.ts
+'use server'
 import { useQuery } from '@supabase-cache-helpers/postgrest-react-query';
 import { createClient } from '@/utils/supabase/client'; // 클라이언트 컴포넌트용 Supabase 클라이언트
 

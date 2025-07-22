@@ -5,7 +5,7 @@ import {
   HydrationBoundary,
   QueryClient,
 } from '@tanstack/react-query';
-import { getPosts } from '@/app/queries/get-posts';
+import { getPosts } from '@/queries/get-posts';
 
 import PostsList from './posts-list'; // 클라이언트 컴포넌트
 
