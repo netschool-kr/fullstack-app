@@ -54,8 +54,8 @@ export async function sendMessage(formData: FormData): Promise<void> {
     throw new Error('인증되지 않은 사용자입니다.');
   }
 
-  const { data: uidTest, error: uidError } = await supabase.rpc('test_auth_uid');
-  console.log('Auth UID test:', uidTest, 'Error:', uidError);
+  // const { data: uidTest, error: uidError } = await supabase.rpc('test_auth_uid');
+  // console.log('Auth UID test:', uidTest, 'Error:', uidError);
 
   const { error } = await supabase.from('messages').insert({
     content: content,
