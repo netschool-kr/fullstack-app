@@ -8,6 +8,18 @@ interface ChatRoom {
   created_at: string;
 }
 
+export async function getChatRoomById(roomId: string) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('chat_rooms')
+    .select('*')
+    .eq('id', roomId)
+    .maybeSingle();  // .single() 대신 .maybeSingle()
+
+  if (error) throw error;
+  return data;  // 행 없으면 null 반환
+}
+
 export async function getChatRooms(): Promise<ChatRoom[]> {
   const supabase = await createClient();
 
