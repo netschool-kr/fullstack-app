@@ -3,6 +3,8 @@
 
 import { createClient } from '@/utils/supabase/server';
 import { revalidatePath } from 'next/cache';
+import { getRange } from '@/utils/pagination';
+import { PAGE_SIZE } from '@/actions/constants';
 
 export async function createPost(formData: FormData) {
   const supabase = await createClient();
@@ -53,4 +55,24 @@ export async function toggleLikeAction(postId: string, isLiked: boolean) {
   }
   
   revalidatePath(`/posts/${postId}`);
+}
+
+
+
+export async function getPosts({ pageParam = 0 }: { pageParam?: number }) {
+  const supabase = await createClient();
+  const { from, to } = getRange(pageParam, PAGE_SIZE);
+
+  const { data, error } = await supabase
+   .from('posts')
+   .select('*, profiles(username, avatar_url)')
+   .order('created_at', { ascending: false })
+   .range(from, to);
+
+  if (error) {
+    console.error('Error fetching posts:', error);
+    throw new Error('Could not fetch posts.');
+  }
+
+  return data;
 }
